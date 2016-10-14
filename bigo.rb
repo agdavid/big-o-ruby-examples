@@ -1,3 +1,7 @@
+# Order of Complexity: O(1), O(log n), O(n), O(n log(n)), O(n^2), O(2^n), O(n!)
+# We want a function to come at the beginning of the list
+
+
 # O(1) "constant time" - time to complete is the same as n grows
 
 def return_first_array_element(array)
