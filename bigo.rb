@@ -18,4 +18,25 @@ def generate_array(n)
     return run_time
 end
 
+# O(n^2) "quadratic time" - time to complete rises by a power of 2
+    # real world example is comparing two lists that you have to match
+    # run outer loop  n times (i.e, go through each item of List 1)
+    # run inner looper n times for every run of outer loop  (i.e., for each item in List 1 go through each item in List 2)
+
+def match_list_of_items(n)
+    list1 = (0..n).to_a
+    list2 = list1.shuffle
+
+    begin_time = Time.now
+    list1.each do |x|
+        list2.each do |y|
+            next if x == y
+        end
+    end
+    end_time = Time.now
+    run_time = end_time - begin_time
+    return run_time
+end
+
+
 
