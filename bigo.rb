@@ -38,5 +38,27 @@ def match_list_of_items(n)
     return run_time
 end
 
+# O(log n) "logarithmic time" - incremental time to completion becomes smaller as n increases, before flattening
+    # classic is binary search
+
+def binary_search(n, from=0, to=nil)
+    array = (0..n).to_a #create array with n items
+    to = array.length - 1 unless to #reduce by 1 b/c index starts at 0 
+    mid = (from + to)/2
+
+    #goal is to return the value of n from the array through binary search
+    begin_time = Time.now
+    if n < array[mid]
+        binary_search(n, from, mid-1)
+    elsif n > array[mid]
+        binary_search(n, mid+1, to)
+    else
+        puts mid
+    end
+    end_time = Time.now
+    run_time = end_time - begin_time
+    return run_time
+end
+
 
 
